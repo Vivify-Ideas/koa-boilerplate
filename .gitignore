@@ -3,3 +3,4 @@ debug_logs/
 src/.env
 logs/
 .env
+.vscode/

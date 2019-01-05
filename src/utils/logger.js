@@ -1,5 +1,5 @@
-const { logsPath, isDev } = require('config');
 const winston = require('winston');
+const { logsPath, isDev } = require('./../config');
 
 const logger = winston.createLogger({
   level: 'info',
