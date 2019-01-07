@@ -8,6 +8,7 @@ const validate = require('koa-validate');
 
 /* Internal Middlewares */
 const urlTokenMiddleware = require('./url-token.middleware');
+const validateMiddleware = require('./validate.middleware');
 
 const setGlobalMiddlewares = (app) => {
   app.use(cors());
@@ -21,4 +22,5 @@ const setGlobalMiddlewares = (app) => {
 module.exports = {
   setGlobalMiddlewares,
   urlTokenMiddleware,
+  validateMiddleware,
 };
