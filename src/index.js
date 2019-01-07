@@ -3,12 +3,13 @@ require('dotenv').config();
 const Koa = require('koa');
 
 const config = require('./config');
-const { logger } = require('./utils');
+const { logger, dbConnect } = require('./utils');
 const { setGlobalMiddlewares } = require('./middlewares');
 const { attachRoutes } = require('./routes');
 
 const app = new Koa();
 
+dbConnect();
 setGlobalMiddlewares(app);
 attachRoutes(app);
 

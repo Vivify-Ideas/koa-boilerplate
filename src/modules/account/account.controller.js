@@ -1,6 +1,8 @@
-// TODO: implement logic
+const accountService = require('./account.service');
+
 const signup = async (ctx) => {
-  ctx.body = 'To be implemented!';
+  const user = await accountService.signup(ctx.params);
+  ctx.body = user;
 };
 
 module.exports = {
