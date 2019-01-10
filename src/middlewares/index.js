@@ -9,12 +9,15 @@ const validate = require('koa-validate');
 /* Internal Middlewares */
 const urlTokenMiddleware = require('./url-token.middleware');
 const validateMiddleware = require('./validate.middleware');
+const errorsHandlerMiddleware = require('./errors-handler.middleware');
 
 const setGlobalMiddlewares = (app) => {
   app.use(cors());
   app.use(helmet());
   app.use(bodyParser({ enableTypes: ['json', 'form', 'text'] }));
   app.use(requestLogger());
+
+  app.use(errorsHandlerMiddleware);
 
   validate(app);
 };

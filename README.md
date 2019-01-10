@@ -1,4 +1,4 @@
-# Evidentist API
+# KoaJS API
 
 Awesome NodeJS API
 
@@ -33,7 +33,7 @@ cp .env.example .env
 
 Start Docker MongoDB container
 ```
-docker run -p 27017:27017 --name my-mongo -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=example -v ${PWD}:/data/db mongo:4.0.4
+docker run -p 27017:27017 --name my-mongo -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=example -v $PWD/mongodb:/data/db mongo:4.0.4
 ```
 
 ## Running
@@ -50,8 +50,12 @@ npm run start:watch
 
 ## Deployment
 
-TODO: Add additional notes about how to deploy this on a live system
+TODO: Add additional notes about how to deploy
 
 ## Built With
 
 * [KoaJS](https://koajs.com/) - Next generation web framework for NodeJS
+
+## License
+
+[MIT](LICENSE.md)

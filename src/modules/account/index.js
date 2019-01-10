@@ -2,10 +2,18 @@ const Router = require('koa-router');
 
 const { validateMiddleware } = require('./../../middlewares');
 const validators = require('./validators');
-
-const router = new Router();
 const controller = require('./account.controller');
 
-router.get('/signup', validateMiddleware(validators.signup), controller.signup);
+const guest = new Router();
+guest.post('/signup', validateMiddleware(validators.signup), controller.signup);
+guest.post('/login', validateMiddleware(validators.login), controller.login);
 
-module.exports = router.routes();
+const auth = new Router();
+auth.get('/test', (ctx) => {
+  ctx.body = 'Hello';
+});
+
+module.exports = {
+  guest: guest.routes(),
+  auth: auth.routes(),
+};
